@@ -88,6 +88,50 @@
         .social-icon{display:inline-flex;align-items:center;justify-content:center;width:50px;height:50px;background:linear-gradient(135deg,var(--primary-coral),var(--lavender));color:white;border-radius:50%;text-decoration:none;transition:all .3s ease;box-shadow:var(--shadow)}
         .social-icon:hover{transform:translateY(-3px) scale(1.1);box-shadow:var(--shadow-hover);color:white}
         
+        /* ===== VIDEO FEEDBACK SECTION ===== */
+        .feedback-viewport {
+            overflow-x: auto;
+            margin: 1.5rem 0;
+            padding-bottom: 10px;
+        }
+        .feedback-viewport::-webkit-scrollbar {
+            height: 8px;
+        }
+        .feedback-viewport::-webkit-scrollbar-track {
+            background: var(--cream);
+            border-radius: 10px;
+        }
+        .feedback-viewport::-webkit-scrollbar-thumb {
+            background: linear-gradient(135deg, var(--primary-coral), var(--lavender));
+            border-radius: 10px;
+        }
+        .feedback-track {
+            display: flex;
+            gap: 15px;
+            width: max-content;
+        }
+        .feedback-item {
+            flex-shrink: 0;
+            width: 260px;
+            border-radius: 15px;
+            overflow: hidden;
+            transition: transform 0.4s ease;
+            position: relative;
+            box-shadow: var(--shadow);
+            background: #000;
+        }
+        .feedback-item:hover {
+            transform: scale(1.03);
+            box-shadow: var(--shadow-hover);
+        }
+        .feedback-item iframe {
+            display: block;
+            width: 100%;
+            height: 340px;
+            border: none;
+            border-radius: 15px;
+        }
+        
         /* Privacy Modal Styles */
         .privacy-modal{position:fixed;inset:0;background:rgba(26,26,46,.85);backdrop-filter:blur(8px);z-index:9999;opacity:0;visibility:hidden;transition:all .4s ease}
         .privacy-modal.show{opacity:1;visibility:visible}
@@ -102,6 +146,8 @@
             .wa-btn{width:100%;justify-content:center}
             h1.display-3{font-size:2rem}
             h2.display-5{font-size:1.5rem}
+            .feedback-item { width: 220px; }
+            .feedback-item iframe { height: 280px; }
         }
         @media (prefers-reduced-motion:reduce){
             *{animation-duration:.01ms!important;transition-duration:.01ms!important}
@@ -174,6 +220,41 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEO FEEDBACK SECTION -->
+<section class="py-5" style="background:linear-gradient(135deg,var(--cream),var(--white))">
+    <div class="container">
+        <h2 class="text-center display-5 fw-bold mb-3 animate-stagger" style="--order:1">✨ Real Success Stories</h2>
+        <p class="text-center text-muted mb-4 animate-stagger" style="--order:2">Watch authentic feedback from our thriving community</p>
+        
+        <div class="feedback-viewport animate-stagger" style="--order:3">
+            <div class="feedback-track" id="feedbackTrack">
+                <!-- Video 1 -->
+                <div class="feedback-item">
+                    <iframe src="https://www.youtube.com/embed/FLa5hUlOvSY?rel=0&modestbranding=1" allowfullscreen></iframe>
+                </div>
+                <!-- Video 2 -->
+                <div class="feedback-item">
+                    <iframe src="https://www.youtube.com/embed/oSHZi-9Nqdo?rel=0&modestbranding=1" allowfullscreen></iframe>
+                </div>
+                <!-- Video 3 -->
+                <div class="feedback-item">
+                    <iframe src="https://www.youtube.com/embed/RJD7DrZfVhA?rel=0&modestbranding=1" allowfullscreen></iframe>
+                </div>
+                <!-- Video 4 -->
+                <div class="feedback-item">
+                    <iframe src="https://www.youtube.com/embed/QU9l-Fc0nR4?rel=0&modestbranding=1" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <button class="wa-btn open-any" data-source="Feedback Section">
+                <i data-lucide="message-circle" width="20"></i>Join Our Success Stories
+            </button>
         </div>
     </div>
 </section>
